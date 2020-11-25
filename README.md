@@ -9,7 +9,7 @@ mvn clean deploy
     <dependency>
         <groupId>codes.mydna</groupId>
         <artifactId>rest-lib</artifactId>
-        <version>1.0.0</version>
+        <version>1.0.1</version>
     </dependency>
 </dependencies>
 ```
