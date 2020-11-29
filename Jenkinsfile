@@ -40,7 +40,7 @@ pipeline {
         stage("Deploy libraries") {
            steps {
                withCredentials([usernamePassword(credentialsId: NEXUS_CREDENTIALS, passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
-                   sh "mvn clean deploy -DskipTests=true --settings .ci/settings.xml"
+                   sh "mvn clean deploy -DskipTests=true -Dnexus.username=$USERNAME -Dnexus.password=$PASSWORD --settings .ci/settings.xml"
                }
            }
         }
