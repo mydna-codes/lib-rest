@@ -8,7 +8,7 @@ pipeline {
         // Local variables
         COMMIT_AUTHOR          = ""
         COMMIT_MESSAGE         = ""
-        COMMIT_BRANCH          = ""
+        //COMMIT_BRANCH          = ""
     }
 
     tools {
@@ -17,17 +17,17 @@ pipeline {
     }
 
     stages {
-        stage("Clone git") {
-            steps {
-                script {
-                    COMMIT_BRANCH = "${GIT_BRANCH.split("/")[1]}"
-                }
+        //stage("Clone git") {
+        //    steps {
+                //script {
+                //    //COMMIT_BRANCH = "${GIT_BRANCH.split("/")[1]}"
+                //}
 
-                git branch: COMMIT_BRANCH,
-                    credentialsId: "github",
-                    url: "https://github.com/mydna-codes/lib-rest.git"
-            }
-        }
+        //        git branch: COMMIT_BRANCH,
+        //            credentialsId: "github",
+        //            url: "https://github.com/mydna-codes/lib-rest.git"
+        //    }
+        //}
         stage("Set environment variables") {
             steps {
                 script {
@@ -52,10 +52,10 @@ pipeline {
     }
     post {
        success {
-           slackSend (color: '#57BA57', message: "[<${env.BUILD_URL}|Build ${env.BUILD_NUMBER}>] *SUCCESSFUL*\n\nJob: *${env.JOB_NAME}*\n\nBranch: ${COMMIT_BRANCH}\nAuthor: ${COMMIT_AUTHOR}\nMessage: ${COMMIT_MESSAGE}")
+           slackSend (color: '#57BA57', message: "[<${env.BUILD_URL}|Build ${env.BUILD_NUMBER}>] *SUCCESSFUL*\n\nJob: *${env.JOB_NAME}*\n\nBranch: ${COMMIT_BRANCH}\nAuthor: ${COMMIT_AUTHOR}\nMessage: COMMIT_MESSAGE")
        }
        failure {
-           slackSend (color: '#BD0808', message: "[<${env.BUILD_URL}|Build ${env.BUILD_NUMBER}>] *FAILED*\n\nJob: *${env.JOB_NAME}*\n\nBranch: ${COMMIT_BRANCH}\nAuthor: ${COMMIT_AUTHOR}\nMessage: ${COMMIT_MESSAGE}")
+           slackSend (color: '#BD0808', message: "[<${env.BUILD_URL}|Build ${env.BUILD_NUMBER}>] *FAILED*\n\nJob: *${env.JOB_NAME}*\n\nBranch: ${COMMIT_BRANCH}\nAuthor: ${COMMIT_AUTHOR}\nMessage: COMMIT_MESSAGE")
        }
     }
 }
