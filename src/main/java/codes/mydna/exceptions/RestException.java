@@ -39,4 +39,9 @@ public class RestException extends RuntimeException {
         return this.statusCode;
     }
 
+    // Only purpose of this method is for OpenAPI to recognize this field
+    public String getMessage(){
+        return super.getMessage();
+    }
+
 }
