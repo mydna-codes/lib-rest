@@ -6,4 +6,8 @@ public class NullInputException extends BadRequestException {
         super(String.format("Object '%s' cannot be null!", entityClass.getSimpleName()));
     }
 
+    public NullInputException(String fieldName){
+        super(String.format("Input field '%s' cannot be null!", fieldName));
+    }
+
 }
