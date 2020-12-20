@@ -27,13 +27,13 @@ public class Assert {
 
     /**
      * Throws Rest exception if field of an object is not null
-     * @param objectClass - Field's parent object
+     * @param parentClass - Field's parent object
      * @param field - Field to be checked
      * @param fieldName - Name of field
      * */
-    public static void fieldNotNull(Object field, String fieldName, Class<?> objectClass){
+    public static void fieldNotNull(Object field, String fieldName, Class<?> parentClass){
         if(field == null)
-            throw new NullInputException(objectClass, fieldName);
+            throw new NullInputException(parentClass, fieldName);
     }
 
 
@@ -50,14 +50,14 @@ public class Assert {
 
     /**
      * Throws Rest exception if field of an object is empty
-     * @param entityClass - Field's parent object
+     * @param parentClass - Field's parent object
      * @param field - Field to be checked
      * @param fieldName - Name of field
      * */
-    public static void fieldNotEmpty(String field, String fieldName, Class<?> entityClass){
-        fieldNotNull(field, fieldName);
+    public static void fieldNotEmpty(String field, String fieldName, Class<?> parentClass){
+        fieldNotNull(field, fieldName, parentClass);
         if(field.isEmpty())
-            throw new ValidationException(entityClass, fieldName);
+            throw new ValidationException(parentClass, fieldName);
     }
 
 }
