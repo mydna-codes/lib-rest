@@ -10,7 +10,7 @@ public class Assert {
      * @param objectClass - Object class
      * @param o - Object to be checked
      * */
-    public static void fieldNotNull(Object o, Class<?> objectClass){
+    public static void objectNotNull(Object o, Class<?> objectClass){
         if(o == null)
             throw new NullInputException(objectClass);
     }
