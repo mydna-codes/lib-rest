@@ -1,5 +1,6 @@
 package codes.mydna.validation;
 
+import codes.mydna.exceptions.BadRequestException;
 import codes.mydna.exceptions.NullInputException;
 import codes.mydna.exceptions.ValidationException;
 
@@ -60,4 +61,20 @@ public class Assert {
             throw new ValidationException(parentClass, fieldName);
     }
 
+    public static <E extends Enum<E>> void validateEnum(Class<E> eClass, String value){
+        try {
+            E.valueOf(eClass, value);
+        } catch (IllegalArgumentException e) {
+            System.out.println("yaaay");
+        }
+        System.out.println("fuck");
+    }
+
+    public static <E extends Enum<E>> void validEnum(Class<E> enumClass, String value){
+        try {
+            E.valueOf(enumClass, value);
+        } catch (IllegalArgumentException e) {
+            throw new BadRequestException("Invalid " + enumClass.getSimpleName() + " value.");
+        }
+    }
 }
