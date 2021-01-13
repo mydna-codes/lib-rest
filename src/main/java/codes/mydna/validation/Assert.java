@@ -61,15 +61,11 @@ public class Assert {
             throw new ValidationException(parentClass, fieldName);
     }
 
-    public static <E extends Enum<E>> void validateEnum(Class<E> eClass, String value){
-        try {
-            E.valueOf(eClass, value);
-        } catch (IllegalArgumentException e) {
-            System.out.println("yaaay");
-        }
-        System.out.println("fuck");
-    }
-
+    /**
+     * Throws rest exception if string value is not valid enum type
+     * @param enumClass - enum class
+     * @param value - String value of enum type
+     */
     public static <E extends Enum<E>> void validEnum(Class<E> enumClass, String value){
         try {
             E.valueOf(enumClass, value);
