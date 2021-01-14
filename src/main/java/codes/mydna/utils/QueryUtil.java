@@ -8,6 +8,14 @@ import java.util.stream.Collectors;
 
 public class QueryUtil {
 
+    public static QueryParameters removeLimitAndOffset(QueryParameters queryParameters){
+        QueryParameters qp = new QueryParameters();
+        qp.setOrder(queryParameters.getOrder());
+        qp.setFilters(queryParameters.getFilters());
+        qp.setFields(queryParameters.getFields());
+        return qp;
+    }
+
     public static void addOrReplaceFilter(QueryParameters queryParameters, QueryFilter filter) {
 
         if(queryParameters == null) {

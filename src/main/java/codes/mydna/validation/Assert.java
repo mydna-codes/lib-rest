@@ -2,6 +2,7 @@ package codes.mydna.validation;
 
 import codes.mydna.exceptions.BadRequestException;
 import codes.mydna.exceptions.NullInputException;
+import codes.mydna.exceptions.UnauthorizedException;
 import codes.mydna.exceptions.ValidationException;
 
 public class Assert {
@@ -71,6 +72,16 @@ public class Assert {
             E.valueOf(enumClass, value);
         } catch (IllegalArgumentException e) {
             throw new BadRequestException("Invalid " + enumClass.getSimpleName() + " value.");
+        }
+    }
+
+    /**
+     * If user object is null, Unauthorized exception will be thrown
+     * @param user - User object
+     */
+    public static void userNotNull(Object user){
+        if(user == null) {
+            throw new UnauthorizedException("Only logged in users can access requested action.");
         }
     }
 }
