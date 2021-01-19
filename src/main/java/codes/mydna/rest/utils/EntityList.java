@@ -1,4 +1,4 @@
-package codes.mydna.utils;
+package codes.mydna.rest.utils;
 
 import java.util.ArrayList;
 import java.util.List;

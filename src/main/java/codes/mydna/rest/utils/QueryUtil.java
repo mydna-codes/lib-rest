@@ -1,4 +1,4 @@
-package codes.mydna.utils;
+package codes.mydna.rest.utils;
 
 import com.kumuluz.ee.rest.beans.QueryFilter;
 import com.kumuluz.ee.rest.beans.QueryParameters;

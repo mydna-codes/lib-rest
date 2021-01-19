@@ -1,9 +1,9 @@
-package codes.mydna.validation;
+package codes.mydna.rest.validation;
 
-import codes.mydna.exceptions.BadRequestException;
-import codes.mydna.exceptions.NullInputException;
-import codes.mydna.exceptions.UnauthorizedException;
-import codes.mydna.exceptions.ValidationException;
+import codes.mydna.rest.exceptions.BadRequestException;
+import codes.mydna.rest.exceptions.NullInputException;
+import codes.mydna.rest.exceptions.UnauthorizedException;
+import codes.mydna.rest.exceptions.ValidationException;
 
 public class Assert {
 

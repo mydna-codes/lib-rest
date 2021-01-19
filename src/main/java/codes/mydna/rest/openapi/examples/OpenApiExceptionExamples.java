@@ -1,4 +1,4 @@
-package codes.mydna.openapi.examples;
+package codes.mydna.rest.openapi.examples;
 
 public class OpenApiExceptionExamples {
 

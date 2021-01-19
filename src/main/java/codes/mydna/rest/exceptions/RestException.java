@@ -1,4 +1,4 @@
-package codes.mydna.exceptions;
+package codes.mydna.rest.exceptions;
 
 import javax.ws.rs.core.Response;
 

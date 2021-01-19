@@ -1,4 +1,4 @@
-package codes.mydna.http;
+package codes.mydna.rest.http;
 
 public class Headers {
 
